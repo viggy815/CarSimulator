@@ -4,10 +4,22 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import parts.CarParts;
+import parts.Conditions;
+import parts.Doors;
+import parts.Engine;
+import parts.WheelsTires;
+import parts.Windows;
 
 public class Simulator {
 	public static int options = 0;
 	public static Scanner input = new Scanner(System.in);
+	Car carRun = new Car();
+	CarParts parts = new CarParts();
+	Conditions condition = new Conditions();
+	Doors doors = new Doors();
+	Engine engine = new Engine();
+	Windows windows = new Windows();
+	WheelsTires wheels = new WheelsTires();
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,23 +29,9 @@ public class Simulator {
 
 	}
 
-	public void nothing() {
-		System.out.println("nothing");
-		menu();
-		options = input.nextInt();
-
-	}
-
-	public void something() {
-		System.out.println("Something");
-		menu();
-		options = input.nextInt();
-	}
-
 	public void menu() {
-		Car carRun = new Car();
-		CarParts parts = new CarParts();
-		System.out.println("select an option:\n1) Turn Car on\n2) Car Parts\n3) Conditions\n0) Exit");
+
+		System.out.println("Select an option:\n1) Turn Car on\n2) Car Parts\n3) Conditions\n0) Exit");
 
 		try {
 			// options = input.nextInt();
@@ -54,12 +52,15 @@ public class Simulator {
 						break;
 					case 3:
 
+						condition.allConditions(doors.doorConditions(), engine.conditions(), windows.windowconditions(),
+								wheels.wheelConditions());
 						break;
 
 					}
 				}
 			} else if (options == 0) {
 				System.out.println("Thank you for using this application! GoodBye!");
+				System.exit(0);
 
 			} else {
 
