@@ -18,7 +18,7 @@ public class Car {
 			System.out.println("Car is turned off, please select from the Main Menu");
 			new Simulator().menu();
 		} else {
-			System.out.println("Please turn the car off before continuing...");
+			System.out.println("Please turn the car off by pressing 0 before continuing...");
 		}
 
 	}
