@@ -64,10 +64,12 @@ public class Simulator {
 
 			} else {
 
-				System.out.println("Please enter a value between 0 and 4");
+				System.out.println("Please enter a value between 0 and 4\n");
+				menu();
 			}
 		} catch (NumberFormatException e) {
 			System.out.println("Please enter a value from 0 to 3");
+			input.next();
 			menu();
 		} catch (InputMismatchException ex) {
 			System.out.println("Please enter a numeric value that corresponds with a menu item.");
